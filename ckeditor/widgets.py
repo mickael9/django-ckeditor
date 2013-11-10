@@ -55,7 +55,7 @@ class CKEditorWidget(forms.Textarea):
         if self.extra_config:
             attrs['data-config'] = utils.json_encode(self.extra_config)
 
-        return mark_safe(u'<textarea%(attrs)s>%(value)s</textarea>' % {
+        return mark_safe(u'<p><textarea%(attrs)s>%(value)s</textarea></p>' % {
             'attrs': flatatt(self.build_attrs(attrs, name=name)),
             'value': conditional_escape(force_unicode(value)),
         })
